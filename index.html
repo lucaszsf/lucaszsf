@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lucaszsf</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(145deg, #b0b0b0, #e0e0e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .background-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .background-text span {
+      position: absolute;
+      color: rgba(0, 0, 0, 0.2);
+      font-size: 20px;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .center-text {
+      position: relative;
+      z-index: 1;
+      font-size: 4rem;
+      color: #333;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="background-text" id="background"></div>
+  <div class="center-text">lucaszsf</div>
+
+  <script>
+    const background = document.getElementById('background');
+    const numberOfStars = 300;
+
+    for (let i = 0; i < numberOfStars; i++) {
+      const span = document.createElement('span');
+      span.textContent = '★ zsf';
+      span.style.top = `${Math.random() * 100}%`;
+      span.style.left = `${Math.random() * 100}%`;
+      span.style.transform = `rotate(${Math.random() * 360}deg)`;
+      background.appendChild(span);
+    }
+  </script>
+</body>
+</html>
